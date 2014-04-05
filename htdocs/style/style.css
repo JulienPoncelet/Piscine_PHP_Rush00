@@ -1,0 +1,23 @@
+.menu {
+	margin-left: 0px;
+}
+
+.menu li {
+	display: inline;
+}
+
+.menu li a {
+	margin-right: -2px;
+	padding: 12px 80px;
+	background-color: #4F4196;
+	color: white;
+}
+
+.menu li a:hover {
+	background-color: #332A61;
+}
+
+footer {
+	text-align: right;
+	font-style: italic;
+}
