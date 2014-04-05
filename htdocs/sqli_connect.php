@@ -1,12 +1,13 @@
 <?php
+include("mysqli.php");
 function sql_connect()
 {
-	$login = "root";
-	$passwd = "209742Vinc";
-	$db = mysqli_connect('local.42.fr', $login, $passwd, 'e-shop');
+	$db = mysqli_connect('local.42.fr', "root", "209742Vinc", 'vrey_shop');
 	if (!isset($db))
 	{
 		print("Error connecting to database\n");
+		$_SESSION['dblogin'] = NULL;
+		$_SESSION['dbpasswd'] = NULL;
 		return (FALSE);
 	}
 	else

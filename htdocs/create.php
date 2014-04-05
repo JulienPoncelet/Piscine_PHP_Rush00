@@ -21,7 +21,7 @@ if (check_serial($db) != FALSE)
 	echo "OK\n";
 	$log = $_POST['login'];
 	$passwd = hash("whirlpool", $_POST['passwd']);
-	$sql = "INSERT INTO `e-shop`.`user` (`login`, `passwd`, `root_access`) VALUES ('$log', '$passwd', '0')";
+	$sql = "INSERT INTO `vrey_shop`.`user` (`login`, `passwd`, `root_access`) VALUES ('$log', '$passwd', '0')";
 	mysqli_query($db, $sql);
 }
 else
