@@ -11,7 +11,7 @@
 			<li><a href="/index.php">Shop</a></li>
 			<li><a href="/index.php">Shopping Cart</a></li>
 			<li><a href="/sign_up/sign_up.php">New Member</a></li>
-			<li><a href="/sign_in.php">Sign in</a></li>
+			<li><a href="/sign_in/sign_in.php">Sign in</a></li>
 			<li><a href="/index.php">My Account</a></li>
 			<li><a href="/admin/index.php">Admin</a></li>
 		</ul>
