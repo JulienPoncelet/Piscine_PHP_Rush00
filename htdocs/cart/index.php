@@ -20,7 +20,7 @@ require_once("../includes/footer.php");
 
 $db = sql_connect();
 $items = get_items($db);
-
+$in = NULL;
 $cart = unserialize($_SESSION["cart"]);
 if ($cart)
 {

@@ -10,10 +10,10 @@ if (isset($_SESSION['cart']))
 	$row = mysqli_query($db, "SELECT * FROM `product`");
 	while ($array = mysqli_fetch_array($row, MYSQLI_NUM))
 	{
-		if ($array[0] == $id)
+		if ($array[0] == $id )
 		{
 			$stock = $array[2] + 1;
-			$query = "UPDATE `product` SET `stock`= ('$stock') WHERE ID = $id";
+			$query = "UPDATE `product` SET `stock`= '$stock' WHERE `ID` = '$id'";
 			mysqli_query($db, $query);
 			$cart[$id]--;
 			$cart['price'] -= $array[1];
@@ -21,5 +21,6 @@ if (isset($_SESSION['cart']))
 		}
 	}
 }
+header("Location: index.php");
 mysqli_close($db);
 ?>
