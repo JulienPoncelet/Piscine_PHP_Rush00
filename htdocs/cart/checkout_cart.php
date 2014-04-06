@@ -1,17 +1,13 @@
 <?PHP
-include ("../mysqli/sqli_connect.php");
 session_start();
 if (isset($_SESSION['cart']))
 {
-	$db = sql_connect();
 	$cart = unserialize($_SESSION['cart']);
 	foreach ($cart as $key => $val)
 	{
 		if ($key != "price")
 		{
-			$query = "UPDATE `product` SET `stock`= 1 WHERE `ID` = '$key'";
 			$cart[$key] = 0;
-			mysqli_query($db, $query);
 		}
 	}
 	$cart['price'] = 0;

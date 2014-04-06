@@ -15,7 +15,7 @@ while ($array = mysqli_fetch_array($row, MYSQLI_NUM))
 			$stock = $array[2] - 1;
 			$query = "UPDATE `product` SET `stock`= '$stock' WHERE `ID` = '$id'";
 			mysqli_query($db, $query);
-			$cart['$id']++;
+			$cart[$id]++;
 			$cart['price'] += $array[1];
 			$_SESSION['cart'] = serialize($cart);
 			header("Location: ../shop/index.php");

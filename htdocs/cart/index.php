@@ -18,8 +18,17 @@ else
 require_once("../includes/footer.php");
 
 $cart = unserialize($_SESSION["cart"]);
-print_r($cart);
-
+if ($cart)
+{
+	foreach ($cart as $key => $val)
+	{
+		if ($val != 0 && $key != "price")
+			echo "$key: $val";
+	}
+	echo "Total price is: $cart[price]";
+}
+else
+	echo "Total price is: 0, cart is empty";
 ?>
 
 </div>
