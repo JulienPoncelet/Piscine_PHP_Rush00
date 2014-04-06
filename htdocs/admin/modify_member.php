@@ -1,4 +1,4 @@
-<div class="all">
+ <div class="all">
 
 <?PHP
 session_start();
@@ -17,16 +17,13 @@ require_once("../includes/footer.php");
 ?>
 
 <div class="login">
-	<h1>Modify Item</h1>
-	<form action="ft_modify_item.php" method="POST" class="form_login">
+	<h1>Modify member</h1>
+	<form action="ft_modify_member.php" method="POST" class="form_login">
 		<div id="login_passwd">
 			<label for="">Name : </label><input id="input" type="text" name="oldname"><br />
 			<label for="">New name</label><input id="input" type="text" name="newname"><br />
-			<label for="">New pic</label><input id="input" type="text" name="picture"/><br />
-			<label for="">New price</label><input id="input" type="text" name="price"/><br />
-			<label for="">New stock</label><input id="input" type="stock" name="stock"/><br />
-			<label for="">New Loc</label><input id="input" type="text" name="loc"/><br />
-			<label for="">New size</label><input id="input" type="size" name="size"/><br />
+			<label for="">New pass</label><input id="input" type="text" name="passwd"/><br />
+			<label for="">New admin</label><input id="input" type="text" name="admin"/><br />
 		</div>
 		<div>
 			<input class="bouton" type="submit" name="submit" value="OK"/>

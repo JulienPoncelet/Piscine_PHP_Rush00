@@ -27,8 +27,8 @@ require_once("../includes/footer.php");
 				<li><a href="../items/add_item.php">Ajouter un item</a></li>
 				<li><a href="../items/modify_item.php">Modifier un item</a></li>
 				<li><a href="../items/delete_item.php">Delete un item</a></li>
-				<li>Modifier un membre</li>
-				<li>Delete un membre</li>
+				<li><a href="./modify_member.php">Modifier un membre</a></li>
+				<li><a href="./delete_member.php">Delete un membre</a></li>
 			</ul>
 		</div>
 	</body>
