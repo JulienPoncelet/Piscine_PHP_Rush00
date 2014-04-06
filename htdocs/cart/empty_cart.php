@@ -9,7 +9,7 @@ if (isset($_SESSION['cart']))
 	{
 		if ($key != "price")
 		{
-			$query = "UPDATE `product` SET `stock`= 1 WHERE `ID` = '$key'";
+			$query = "UPDATE `product` SET `stock`= (`stock` + '$val') WHERE `ID` = '$key'";
 			$cart[$key] = 0;
 			mysqli_query($db, $query);
 		}

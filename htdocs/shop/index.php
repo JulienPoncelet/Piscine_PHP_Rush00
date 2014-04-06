@@ -167,7 +167,7 @@ $i = 0;
 				Price: <?PHP print($items[$i][1]) ?> &euro; <br/>
 				Size: <?PHP print($items[$i][4]) ?> <br/>
 				Localisaton: <?PHP print($items[$i][3]) ?> <br/>
-				Stock: <?PHP print($items[$i][2]) ?> &euro; <br/>
+				Stock: <?PHP print($items[$i][2]) ?> <br/>
 				<img class="plane_pic" src="<?= $items[$i][5] ?>"/>
 				<a href="../cart/add_to_cart.php?item=<?= $items[$i][0] ?>"><img src="../img/plus.png"></a>
 				<?PHP $i++?>
@@ -181,7 +181,7 @@ $i = 0;
 				Price: <?PHP print($items[$i][1]) ?> &euro; <br/>
 				Size: <?PHP print($items[$i][4]) ?> <br/>
 				Localisaton: <?PHP print($items[$i][3]) ?> <br/>
-				Stock: <?PHP print($items[$i][2]) ?> &euro; <br/>
+				Stock: <?PHP print($items[$i][2]) ?> <br/>
 				<img class="plane_pic" src="<?= $items[$i][5] ?>"/>
 				<a href="../cart/add_to_cart.php?item=<?= $items[$i][0] ?>"><img src="../img/plus.png"></a>
 				<?PHP $i++?>
@@ -195,7 +195,7 @@ $i = 0;
 				Price: <?PHP print($items[$i][1]) ?> &euro; <br/>
 				Size: <?PHP print($items[$i][4]) ?> <br/>
 				Localisaton: <?PHP print($items[$i][3]) ?> <br/>
-				Stock: <?PHP print($items[$i][2]) ?> &euro; <br/>
+				Stock: <?PHP print($items[$i][2]) ?> <br/>
 				<img class="plane_pic" src="<?= $items[$i][5] ?>"/>
 				<a href="../cart/add_to_cart.php?item=<?= $items[$i][0] ?>"><img src="../img/plus.png"></a>
 				<?PHP $i++?>

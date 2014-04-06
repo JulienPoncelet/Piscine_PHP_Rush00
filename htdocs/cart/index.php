@@ -3,6 +3,7 @@
 <?PHP
 
 include("../mysqli/sqli_connect.php");
+include("../shop/get_item.php");
 
 session_start();
 if (isset($_SESSION['login']) && isset($_SESSION["admin"]))
@@ -17,18 +18,213 @@ else
 
 require_once("../includes/footer.php");
 
+$db = sql_connect();
+$items = get_items($db);
+
 $cart = unserialize($_SESSION["cart"]);
 if ($cart)
 {
 	foreach ($cart as $key => $val)
 	{
 		if ($val != 0 && $key != "price")
-			echo "$key: $val";
+			foreach ($items as $item)
+				if ($item[0] === $key)
+					$in[] = $item;
 	}
-	echo "Total price is: $cart[price]";
+	$i = 0;
 }
 else
-	echo "Total price is: 0, cart is empty";
+	exit;
 ?>
 
+	<table>
+		<tr>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?><br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?>  <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?>  <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?>  <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+			<td>
+				<?PHP
+					if (!isset($in[$i]))
+						exit;
+				?>
+				Name: <?PHP print($in[$i][0]) ?> <br/>
+				Price: <?PHP print($in[$i][1]) ?> &euro; <br/>
+				Size: <?PHP print($in[$i][4]) ?> <br/>
+				Localisaton: <?PHP print($in[$i][3]) ?> <br/>
+				Stock restant: <?PHP print($in[$i][2]) ?> <br/>
+				Dans le panier: <?PHP print($val) ?><br/>
+				<img class="plane_pic" src="<?= $in[$i][5] ?>"/>
+				<a href="../cart/remove_item.php?item=<?= $in[$i][0] ?>"><img src="../img/moins.png"></a>
+				<?PHP $i++?>
+			</td>
+		</tr>
+	</table>
 </div>
