@@ -25,8 +25,8 @@ require_once("../includes/footer.php");
 			<h3>Que voulez-vous faire ?</h3>
 			<ul class="ft_list">
 				<li><a href="../items/add_item.php">Ajouter un item</a></li>
-				<li>Modifier un item</li>
-				<li>Delete un item</li>
+				<li><a href="../items/modify_item.php">Modifier un item</a></li>
+				<li><a href="../items/delete_item.php">Delete un item</a></li>
 				<li>Modifier un membre</li>
 				<li>Delete un membre</li>
 			</ul>
